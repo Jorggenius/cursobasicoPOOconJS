@@ -14,9 +14,6 @@ function student(name, age, cursosAprobados){
     this.name = name;
     this.age = age;
     this.cursosAprobados = cursosAprobados;
-    //  this.aprobarCurso = function(nuevoCursito){
-    //     this.cursosAprobados.push(nuevoCursito)
-    //  }
 }
 student.prototype.aprobarCurso = function (nuevoCursito){
     this.cursosAprobados.push(nuevoCursito)
@@ -29,4 +26,29 @@ const juanita = new student(
         "Curso de introduccion a la produccion de videojuegos",
         "Curso de creacion de videojuegos",
     ]
+)
+
+//Prototipos con la sintaxis de clases//
+class student2 {
+    constructor({
+        name,
+        age,
+        email,
+        cursosAprobados = [],
+    }){
+        this.name = name;
+        this.cursosAprobados = cursosAprobados;
+        this.email = email
+        this.age = age;
+    }
+    aprobarCurso(nuevoCursito){
+        this.cursosAprobados.push(nuevoCursito)
+    }
+}
+
+const miguelito = new student2({
+    name:"Miguel",  
+    age: 28,
+    email: "migueliti@platzi.com",
+}
 )
