@@ -1,54 +1,67 @@
-const natalia = {
-    name: "Natalia",
-    age: 20,
-    cursosAprobados:[
-        "Curso Definitivo de HTML y CSS",
-        "Curso Practico de HTML y CSS",
-    ],
-    aprobarCurso(nuevoCursito){
-      this.cursosAprobados.push(nuevoCursito)
+const juan1 = {
+    name: "JuanDC",
+    username: "juandc",
+    points: 100,
+    socialMedia: {
+        twiter: "fjuandc",
+        instagram: "fjuandc",
+        facebook: undefined,
     },
+    approvedCourses: [
+        "Curso definitivo de html y css",
+        "Curso Practico de html y css",
+    ],
+    learningPaths: [
+    {
+        name: "Escuela de desarrollo web",
+        courses: [
+            "Curso definitivo de html y css",
+            "Curso Practico de html y css",
+            "Curso de responsive desing",
+            "Curso de Sistemas de diseño",
+        ],
+    },
+    {
+        name: "Escuela de videojuegos",
+        courses: [
+            "Curso de introduccion a la produccion de VGs",
+            "Curso de unreal engine",
+            "Curso de Unioty 3D",
+        ],
+    },
+    ],
 }
 
-function student(name, age, cursosAprobados){
-    this.name = name;
-    this.age = age;
-    this.cursosAprobados = cursosAprobados;
+const miguelito1 =  {
+    name: "Miguelito",
+    username: "miguelitofeliz",
+    points: 1000,
+    socialMedia: {
+        twiter: "miguelitofeliz",
+        instagram: "miguelito_feliz",
+        facebook: undefined,
+    },
+    approvedCourses: [
+        "Curso DataBusiness",
+        "Curso DataViz",
+    ],
+    learningPaths: [
+    {
+        name: "Escuela de desarrollo web",
+        courses: [
+            "Curso definitivo de html y css",
+            "Curso Practico de html y css",
+            "Curso de responsive desing",
+            "Curso de Sistemas de diseño",
+        ],
+    },
+    {
+        name: "Escuela de Data science",
+        courses: [
+            "Curso DataBusiness",
+            "Curso DataViz",
+            "Curso Tableau",
+        ],
+    },
+    ],
 }
-student.prototype.aprobarCurso = function (nuevoCursito){
-    this.cursosAprobados.push(nuevoCursito)
-}
-
-const juanita = new student(
-    "Juanita alejandra",
-    15,
-    [
-        "Curso de introduccion a la produccion de videojuegos",
-        "Curso de creacion de videojuegos",
-    ]
-)
-
-//Prototipos con la sintaxis de clases//
-class student2 {
-    constructor({
-        name,
-        age,
-        email,
-        cursosAprobados = [],
-    }){
-        this.name = name;
-        this.cursosAprobados = cursosAprobados;
-        this.email = email
-        this.age = age;
-    }
-    aprobarCurso(nuevoCursito){
-        this.cursosAprobados.push(nuevoCursito)
-    }
-}
-
-const miguelito = new student2({
-    name:"Miguel",  
-    age: 28,
-    email: "migueliti@platzi.com",
-}
-)
