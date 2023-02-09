@@ -2,15 +2,30 @@ class courses {
     constructor({
         name,
         classes = [],
+        commentas = [],
     }){
-        this.name = name;
+        this._name = name;
         this.classes = classes;
     }
+    get name(){
+        return this._name; 
+    }
+   
+    set  name(nuevoNombresito){
+        if(nuevoNombresito === "Curso malito de proghramacion basica"){
+            console.error("Web... no")
+        }else{
+            this._name = nuevoNombresito
+        }
+   }
 }
+
 
 const CursoProgBasica = new courses({
     name: "Curso gratis de programacion basica",
 })
+CursoProgBasica.name = ""
+
 const CursoDefinitivoHTML = new courses({
     name: "Curso definitivo de HTML y CSS",
 })
@@ -32,15 +47,15 @@ class learningPhats{
 const escuelaWeb = new learningPhats({
     name: "escuela de desarrollo web",
     courses: [
-        "Curso de programcion basica",
-        "Curso definitivo de HTML y CSS",
-        "Curso practico de HTML y CSS",
+        CursoProgBasica,
+        CursoDefinitivoHTML,
+        CursoPracticoHTML,
     ],
 })  
 const escuelaData = new learningPhats({
     name: "escuela de data science",
     courses: [
-        "Curso de programcion basica",
+        CursoProgBasica,
         "Curso databusisness",
         "Curso dataviz",
     ],
@@ -48,7 +63,7 @@ const escuelaData = new learningPhats({
 const escuelaVgs = new learningPhats({
     name: "escuela de videojuegos",
     courses: [
-        "Curso de programcion basica",
+        CursoProgBasica,
         "Curso Unity",
         "Curso Unreal",
     ],
