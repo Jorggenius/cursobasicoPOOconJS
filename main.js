@@ -1,32 +1,57 @@
+class courses {
+    constructor({
+        name,
+        classes = [],
+    }){
+        this.name = name;
+        this.classes = classes;
+    }
+}
+
+const CursoProgBasica = new courses({
+    name: "Curso gratis de programacion basica",
+})
+const CursoDefinitivoHTML = new courses({
+    name: "Curso definitivo de HTML y CSS",
+})
+const CursoPracticoHTML = new courses({
+    name: "Curso practico de HTML y CSS",
+})
+
+
 class learningPhats{
     constructor({
-        approvedCourses = []
+        name,
+        courses,
     }){
-        this.approvedCourses = [] = approvedCourses;
+        this.name = name;
+        this.courses = courses;
     }
 }
 
 const escuelaWeb = new learningPhats({
-    approvedCourses: [
-        "Curso definitivo de html y css",
-            "Curso Practico de html y css",
-            "Curso de responsive desing",
-            "Curso de Sistemas de diseño",
-    ]
-})
+    name: "escuela de desarrollo web",
+    courses: [
+        "Curso de programcion basica",
+        "Curso definitivo de HTML y CSS",
+        "Curso practico de HTML y CSS",
+    ],
+})  
 const escuelaData = new learningPhats({
-    approvedCourses:[
-        "Curso DataBusiness",
-        "Curso DataViz",
-        "Curso Tableau",
-    ]
+    name: "escuela de data science",
+    courses: [
+        "Curso de programcion basica",
+        "Curso databusisness",
+        "Curso dataviz",
+    ],
 })
 const escuelaVgs = new learningPhats({
-    approvedCourses:[
-        "Curso de introduccion a la produccion de VGs",
-        "Curso de unreal engine",
-        "Curso de Unioty 3D", 
-    ]
+    name: "escuela de videojuegos",
+    courses: [
+        "Curso de programcion basica",
+        "Curso Unity",
+        "Curso Unreal",
+    ],
 })
 
 class Student{
