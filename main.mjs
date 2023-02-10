@@ -1,3 +1,28 @@
+function videoPlay(id){
+    const urlSecreta = "http://Platziultrasecretomasquelanasa.com/" + id
+    console.log("Se esta reproduciendo desde la url" + urlSecreta)
+}
+function videoStop(id){
+    const urlSecreta = "http://Platziultrasecretomasquelanasa.com/" + id
+    console.log("Pausamos la url" + urlSecreta)
+}
+
+export class platziClass{
+    constructor({
+        name,
+        videoID,
+    }){
+      this.name = name;
+      this.videoID = videoID;
+    }
+    reproducir(){
+        videoPlay(this.videoID)
+    }
+    pausar(){
+        videoStop(this.videoID)
+    }
+}
+
 class courses {
     constructor({
         name,
