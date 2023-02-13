@@ -7,7 +7,7 @@ function videoStop(id){
     console.log("Pausamos la url" + urlSecreta)
 }
 
-export class platziClass{
+class platziClass{
     constructor({
         name,
         videoID,
@@ -27,10 +27,13 @@ class courses {
     constructor({
         name,
         classes = [],
-        commentas = [],
+        isFree = false,
+        lang = "spanish", 
     }){
         this._name = name;
         this.classes = classes;
+        this.isFree = isFree;
+        this.lang = lang;
     }
     get name(){
         return this._name; 
@@ -48,6 +51,7 @@ class courses {
 
 const CursoProgBasica = new courses({
     name: "Curso gratis de programacion basica",
+    isFree: true,
 })
 CursoProgBasica.name = ""
 
@@ -56,6 +60,7 @@ const CursoDefinitivoHTML = new courses({
 })
 const CursoPracticoHTML = new courses({
     name: "Curso practico de HTML y CSS",
+    lang:"english",
 })
 
 
@@ -118,14 +123,49 @@ class Student{
     }
 }
 
-const juan2 = new Student({
+class FreeStudent extends Student{
+    constructor(props){
+      super(props)   
+    }
+    approveCourse(newCourse){
+        if (newCourse.isFree){
+            this.approvedCourses.push(newCourse);
+        }else{
+            console.warn("lo sentimos, " + this.name + ", solo puedes tomar cursos abiertos")
+        }
+    }
+}
+
+class BasicStudent extends Student{
+    constructor(props){
+        super(props)   
+      }
+      approveCourse(newCourse){
+        if (newCourse.lang !== "english"){
+            this.approvedCourses.push(newCourse);
+        }else{
+            console.warn("lo sentimos, " + this.name + ", no puedes tomar cursos en imgles")
+        }
+    }
+}
+
+class ExpertStudent extends Student{
+    constructor(props){
+        super(props)   
+      }
+      approveCourse(newCourse){
+        this.approvedCourses.push(newCourse);
+    }
+}
+
+const juan2 = new FreeStudent({
     name: "JuanDc",
     username: "juandc",
     email: "juanito@platzi.com",
     twiter: "fjuandc",
     
 })
-const miguelieto22 = new Student({
+const miguelieto22 = new BasicStudent({
     name: "Miguelito",
     username: "miguelitofiliz",
     email: "miguelito@platzi.com",
